@@ -84,7 +84,11 @@
                             class="link-underline-opacity-0 {{ 'link-success' if job['conclusion']=='success' else 'link-danger' }}">
                             <span class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></span>
                         </a>
-                        {% endfor%}
+                        {% else %}
+                        <span class="bi bi-ban text-secondary"></span>
+                        <span class="bi bi-ban text-secondary"></span>
+                        <span class="bi bi-ban text-secondary"></span>
+                        {% endfor %}
                     </td>
                     <td>
                         {% for job in latest_run_jobs if 'next' in job['name'] %}
@@ -92,7 +96,11 @@
                             class="link-underline-opacity-0 {{ 'link-success' if job['conclusion']=='success' else 'link-danger' }}">
                             <span class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></span>
                         </a>
-                        {% endfor%}
+                        {% else %}
+                        <span class="bi bi-ban text-secondary"></span>
+                        <span class="bi bi-ban text-secondary"></span>
+                        <span class="bi bi-ban text-secondary"></span>
+                        {% endfor %}
                     </td>
                     <td>
                         {% for job in latest_run_jobs if 'ltm-2.4' in job['name'] %}
@@ -100,7 +108,11 @@
                             class="link-underline-opacity-0 {{ 'link-success' if job['conclusion']=='success' else 'link-danger' }}">
                             <span class="bi {{ 'bi-check-square-fill' if job['conclusion']=='success' else 'bi-x-square' }}"></span>
                         </a>
-                        {% endfor%}
+                        {% else %}
+                        <span class="bi bi-ban text-secondary"></span>
+                        <span class="bi bi-ban text-secondary"></span>
+                        <span class="bi bi-ban text-secondary"></span>
+                        {% endfor %}
                     </td>
                     <td class="font-monospace {{ latest_run['updated_at_color'] if latest_run['updated_at_color'] }}">
                         {{ latest_run['updated_at'] | replace('T', ' ') | replace('Z', ' UTC') }}
